@@ -54,8 +54,8 @@ body {
 }
 
 .container {
-    width: 85vw;
-    margin: 0 auto;
+    width: min(1200px, 92vw);
+    margin-inline: auto;
 }
 
 header {
@@ -68,7 +68,7 @@ header {
 .header-text-main {
     margin-top: 3rem;
     font-weight: 600;
-    font-size: 3rem;
+    font-size: clamp(1.8rem, 5vw, 3rem);
     letter-spacing: -0.2rem;
     line-height: 5.4rem;
     text-align: left;
@@ -135,8 +135,10 @@ h3 {
     margin-bottom: 2rem;
 }
 
-.first-mark {
-    grid-column: 1 / 2;
+.first-mark,
+.second-mark,
+.third-mark {
+    /* grid-column: 1 / 2; */
     padding: 2rem;
     box-shadow: 0rem 1rem 2rem rgba(0,0,0,.5);
     border-radius: 0.7rem;
@@ -148,63 +150,47 @@ h3 {
     box-shadow: 0 2rem 2rem rgba(65, 65, 65, 0.3);
 }
 
-.second-mark {
+/* .second-mark {
     grid-column: 2 / 3;
     padding: 2rem;
     box-shadow: 0rem 1rem 2rem rgba(0,0,0,.5);
     border-radius: 0.7rem;
     transition: transform 0.3s, box-shadow 0.3s;
-}
+} */
 
 .second-mark:hover {
     transform: translateY(-0.2rem);
     box-shadow: 0 2rem 2rem rgba(65, 65, 65, 0.3);
 }
 
-.third-mark {
+/* .third-mark {
     grid-column: 3 / 4;
     padding: 2rem;
     box-shadow: 0rem 1rem 2rem rgba(0,0,0,.5);
     border-radius: 0.7rem;
     transition: transform 0.3s, box-shadow 0.3s;
-}
+} */
 
 .third-mark:hover {
     transform: translateY(-0.2rem);
     box-shadow: 0 2rem 2rem rgba(65, 65, 65, 0.3);
 }
 
-.contact-form {
+/* .contact-form {
     flex: 1;
-}
+} */
 
 .btn {
     display: flex;
     padding: 2rem;
     margin-top: 8rem;
+    font-weight: 600;
     text-align: center;
-    background-color: #fff;
+    /* background-color: #fff; */
     text-decoration: none;
     justify-content: center;
     /* flex: 1; */
 }
-
-/* .contact-form {
-    display: flex;
-    margin-top: 14rem;
-}
-
-.att-sign {
-    max-width: 70%;
-    margin-left: -10rem;
-
-    clip-path: polygon(
-        0 0,
-        70% 0,
-        100% 100%,
-        0 100%
-    );
-} */
 
 .image-wrapper {
   position: relative;
@@ -242,12 +228,15 @@ h3 {
 }
 
 .contact-text {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
     text-transform: uppercase;
     font-size: 2.2rem;
     font-weight: 800;
-    margin-top: 6rem;
-    line-height: 2.7rem;
-    letter-spacing: -0.2rem;
+    margin-top: 4rem;
+    /* line-height: 2.7rem; */
+    letter-spacing: -0.13rem;
 }
 
 footer {
@@ -337,4 +326,128 @@ svg {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+/* =========================
+   TABLETS
+========================= */
+
+@media (max-width: 900px) {
+
+  .container {
+    width: 92vw;
+  }
+
+  header {
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+  }
+
+  .header-text-main {
+    font-size: 2.2rem;
+    line-height: 5rem;
+    margin-top: 0;
+    margin-bottom: 3rem ;
+    text-align: center;
+  }
+
+  .header-text {
+    margin-right: 0;
+    margin-top: 2rem;
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  .crane-img {
+    max-width: 100%;
+  }
+
+  .grid-3-cols {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .image-wrapper {
+    height: auto;
+    display: flex;
+    margin-top: 1rem;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .contact-text {
+    letter-spacing: 0rem;
+    font-size: 1rem;
+  }
+
+  /* .att-sign,
+  .map,
+  .map-point {
+    position: static;
+    width: 100%;
+    height: auto;
+    margin: 0;
+  } */
+
+  /* .map {
+    clip-path: none;
+  } */
+
+  .att-sign {
+    clip-path: none;
+    position: static;
+    width: 100%;
+    height: auto;
+    margin: 0;
+  }
+
+  .map-point {
+    width: 3rem;
+    align-self: center;
+  }
+
+  .btn {
+    margin-top: 4rem;
+  }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+  .header-text-main {
+    font-size: 1.8rem;
+    line-height: 2.4rem;
+    letter-spacing: 0;
+  }
+
+  .header-text {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1rem;
+  }
+
+  .first-mark,
+  .second-mark,
+  .third-mark {
+    padding: 1.5rem;
+  }
+
+  .btn {
+    padding: 1rem;
+    font-size: 1rem;
+  }
+
+  footer {
+    margin-top: 2rem;
+    font-size: 0.9rem;
+  }
 }
