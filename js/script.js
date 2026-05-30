@@ -16,3 +16,13 @@ document.querySelectorAll('.animate').forEach(el => {
 document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.animate').forEach(el => observer.observe(el));
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    document.querySelectorAll(".flip-card").forEach(card => {
+        card.addEventListener("click", () => {
+            card.classList.toggle("flipped");
+        });
+    });
+
+});
