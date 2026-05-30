@@ -137,9 +137,8 @@ h3 {
 
 .flip-card {
     perspective: 1000px;
-    height: 300px; /* adjust as needed */
+    height: 300px;
     cursor: pointer;
-    /* background-color: #edecec; */
 }
 
 .flip-card-inner {
@@ -183,44 +182,6 @@ h3 {
 .flip-card:hover .flip-card-front,
 .flip-card:hover .flip-card-back {
     box-shadow: 0 2rem 2rem rgba(65,65,65,.3);
-}
-
-/* .first-mark,
-.second-mark,
-.third-mark {
-    padding: 2rem;
-    box-shadow: 0rem 1rem 2rem rgba(0,0,0,.5);
-    border-radius: 0.7rem;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.first-mark:hover,
-.second-mark:hover,
-.third-mark:hover {
-    transform: translateY(-0.2rem);
-    box-shadow: 0 2rem 2rem rgba(65, 65, 65, 0.3);
-} */
-/* 
-.second-mark:hover {
-    transform: translateY(-0.2rem);
-    box-shadow: 0 2rem 2rem rgba(65, 65, 65, 0.3);
-}
-
-.third-mark:hover {
-    transform: translateY(-0.2rem);
-    box-shadow: 0 2rem 2rem rgba(65, 65, 65, 0.3);
-} */
-
-.btn {
-    display: flex;
-    padding: 2rem;
-    margin-top: 8rem;
-    font-weight: 600;
-    text-align: center;
-    /* background-color: #fff; */
-    text-decoration: none;
-    justify-content: center;
-    /* flex: 1; */
 }
 
 .image-wrapper {
@@ -392,7 +353,10 @@ svg {
   }
 
   .grid-3-cols {
+    display: grid;
     grid-template-columns: 1fr;
+    width: min(500px, 80%);
+    margin: 0 auto;
     gap: 2rem;
   }
 
@@ -409,10 +373,6 @@ svg {
     font-size: 1rem;
     margin-top: 2rem;
   }
-
-  .contact-link {
-        pointer-events: auto;
-    }
 
   .att-sign {
     flex: 2
@@ -450,15 +410,6 @@ svg {
     0 0
   );
 }
-
-  .map-point {
-    width: 3rem;
-    align-self: center;
-  }
-
-  .btn {
-    margin-top: 4rem;
-  }
 }
 
 
@@ -490,10 +441,9 @@ svg {
     padding: 1.5rem;
   }
 
-  .btn {
-    padding: 1rem;
-    font-size: 1rem;
-  }
+  .contact-link {
+        pointer-events: auto;
+    }
 
   footer {
     margin-top: 2rem;
