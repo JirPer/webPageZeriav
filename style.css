@@ -116,6 +116,16 @@ header {
   );
 }
 
+.work-details li {
+  display: block;
+  margin-bottom: 1.2rem;
+  line-height: 0.5rem;
+}
+
+h3 {
+  margin-bottom: 2rem;
+}
+
 .grid-3-cols {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -125,59 +135,80 @@ header {
     text-align: center;
 }
 
-.work-details li {
-    display: block;
-    margin-bottom: 1.2rem;
-    line-height: 0.5rem;
+.flip-card {
+    perspective: 1000px;
+    height: 300px; /* adjust as needed */
+    cursor: pointer;
+    /* background-color: #edecec; */
 }
 
-h3 {
-    margin-bottom: 2rem;
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
 }
 
-.first-mark,
+.flip-card.flipped .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #edecec;
+
+    padding: 2rem;
+    box-shadow: 0rem 1rem 2rem rgba(0,0,0,.5);
+    border-radius: 0.7rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+
+    backface-visibility: hidden;
+}
+
+.flip-card-back {
+    background: #eeeded;
+    transform: rotateY(180deg);
+    text-align: center;
+}
+
+.flip-card:hover .flip-card-front,
+.flip-card:hover .flip-card-back {
+    box-shadow: 0 2rem 2rem rgba(65,65,65,.3);
+}
+
+/* .first-mark,
 .second-mark,
 .third-mark {
-    /* grid-column: 1 / 2; */
     padding: 2rem;
     box-shadow: 0rem 1rem 2rem rgba(0,0,0,.5);
     border-radius: 0.7rem;
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.first-mark:hover {
+.first-mark:hover,
+.second-mark:hover,
+.third-mark:hover {
     transform: translateY(-0.2rem);
     box-shadow: 0 2rem 2rem rgba(65, 65, 65, 0.3);
-}
-
-/* .second-mark {
-    grid-column: 2 / 3;
-    padding: 2rem;
-    box-shadow: 0rem 1rem 2rem rgba(0,0,0,.5);
-    border-radius: 0.7rem;
-    transition: transform 0.3s, box-shadow 0.3s;
 } */
-
+/* 
 .second-mark:hover {
     transform: translateY(-0.2rem);
     box-shadow: 0 2rem 2rem rgba(65, 65, 65, 0.3);
 }
 
-/* .third-mark {
-    grid-column: 3 / 4;
-    padding: 2rem;
-    box-shadow: 0rem 1rem 2rem rgba(0,0,0,.5);
-    border-radius: 0.7rem;
-    transition: transform 0.3s, box-shadow 0.3s;
-} */
-
 .third-mark:hover {
     transform: translateY(-0.2rem);
     box-shadow: 0 2rem 2rem rgba(65, 65, 65, 0.3);
-}
-
-/* .contact-form {
-    flex: 1;
 } */
 
 .btn {
