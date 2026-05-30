@@ -242,23 +242,6 @@ h3 {
   z-index: 2;
 }
 
-.map {
-  position: relative;
-  right: 0;
-  top: 2.8rem;
-  height: 100%;
-  width: 40%;
-  clip-path: polygon(11.7% 0, 100% 0, 100% 100%, 29% 100%);
-  z-index: 1;
-}
-
-/* .map-point {
-    position: absolute;
-    top: 8.6rem;f
-    left: 42rem;
-    z-index: 3;
-} */
-
 .contact-text {
     display: flex;
     flex-direction: column;
@@ -267,8 +250,20 @@ h3 {
     font-size: 2.2rem;
     font-weight: 800;
     margin-top: 4rem;
-    /* line-height: 2.7rem; */
     letter-spacing: -0.13rem;
+}
+
+.contact-text a {
+    color: var(--text-light-gray);
+    text-decoration: none;
+}
+
+.contact-text a:hover {
+    text-decoration: underline;
+}
+
+.contact-link {
+    pointer-events: none;
 }
 
 footer {
@@ -404,7 +399,6 @@ svg {
   .image-wrapper {
     height: auto;
     display: flex;
-    flex-direction: row;
     margin-top: 3rem;
     flex-direction: column;
     gap: 2rem;
@@ -416,18 +410,17 @@ svg {
     margin-top: 2rem;
   }
 
-  /* .att-sign,
-  .map,
-  .map-point {
-    position: static;
-    width: 100%;
-    height: auto;
-    margin: 0;
-  } */
+  .contact-link {
+        pointer-events: auto;
+    }
 
-  /* .map {
-    clip-path: none;
-  } */
+  .att-sign {
+    flex: 2
+  }
+
+  .contact-text {
+    flex: 1
+  }
 
   .att-sign {
     clip-path: polygon(
@@ -477,13 +470,14 @@ svg {
 
   .header-text-main {
     font-size: 1.8rem;
-    line-height: 2.4rem;
-    letter-spacing: 0;
+    line-height: 2.7rem;
+    letter-spacing: -0.2rem;
   }
 
   .header-text {
     font-size: 1rem;
     line-height: 1.5rem;
+    letter-spacing: -0.07rem;
   }
 
   h3 {
